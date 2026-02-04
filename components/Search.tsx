@@ -5,10 +5,10 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-// import { getFiles } from "@/lib/actions/file.action";
+import { getFiles } from "@/lib/actions/file.action";
 import { Models } from "node-appwrite";
 import Thumbnail from "@/components/Thumbnail";
-// import FormattedDateTime from "@/components/FormattedDateTime";
+import FormattedDateTime from "@/components/FormattedDateTime";
 import { useDebounce } from "use-debounce";
 const Search = () => {
   const [query, setQuery] = useState("");
@@ -28,9 +28,9 @@ const Search = () => {
         return router.push(path.replace(searchParams.toString(), ""));
       }
 
-    //   const files = await getFiles({ types: [], searchText: debouncedQuery });
-    //   setResults(files.documents);
-    //   setOpen(true);
+      const files = await getFiles({ types: [], searchText: debouncedQuery });
+      setResults(files.documents);
+      setOpen(true);
     };
 
     fetchFiles();
@@ -88,10 +88,10 @@ const Search = () => {
                     </p>
                   </div>
 
-                  {/* <FormattedDateTime
+                  <FormattedDateTime
                     date={file.$createdAt}
                     className="caption line-clamp-1 text-light-200"
-                  /> */}
+                  />
                 </li>
               ))
             ) : (

@@ -1,11 +1,11 @@
 "use client";
 
-// import {
-//   Sheet,
-//   SheetContent,
-//   SheetTitle,
-//   SheetTrigger,
-// } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import Image from "next/image";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -14,7 +14,7 @@ import { navItems } from "@/constants";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-// import FileUploader from "@/components/FileUploader";
+import FileUploader from "@/components/FileUploader";
 import { signOutUser } from "@/lib/actions/user.action";
 
 interface Props {
@@ -44,7 +44,7 @@ const MobileNavigation = ({
         height={52}
         className="h-auto"
       />
-{/* 
+
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger>
           <Image
@@ -118,7 +118,7 @@ const MobileNavigation = ({
             </Button>
           </div>
         </SheetContent>
-      </Sheet> */}
+      </Sheet>
     </header>
   );
 };
