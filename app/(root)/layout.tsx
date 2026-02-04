@@ -1,14 +1,20 @@
+import Header from "@/components/Header"
+import MobileNavigation from "@/components/MobileNavigation"
+import SideBar from "@/components/SideBar"
 
-export const Layout=({ children }: { children: React.ReactNode }) => {
+const Layout=({ children }: { children: React.ReactNode }) => {
 
     return (
         <main className="flex h-screen">
-
+             <SideBar/>
             <section className="flex h-full flex-1 flex-col">
-                header
+               <MobileNavigation/>
+                <Header/>
                 <div className="main-content">{children}</div>
             </section>
         </main>
     )
 }
+
+export default Layout;
 
